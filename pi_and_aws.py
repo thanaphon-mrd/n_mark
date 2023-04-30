@@ -155,14 +155,13 @@ def detect_fire_by_raspi(stream,fire_detected,alert_timer,fire_cascade):
     fire = fire_cascade.detectMultiScale(gray, 1.3, 5)
 
     # Draw a rectangle around the detected fire
-    for (x,y,w,h) in fire:
-        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
-        fire_detected = True
+    #for (x,y,w,h) in fire:
+    #cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
+        #fire_detected = True
 
     # If a fire is detected, display an alert message for 5 seconds
-    if fire_detected:
+    if True:
         if alert_timer == 0:
-            print("Fire detected in pi!")
             # Encode image bytes as base64 string
             _, img_bytes = cv2.imencode('.png', frame)
 
