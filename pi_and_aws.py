@@ -227,7 +227,8 @@ def check_distance_waypoint(vehicle, waypoint, cnx):
             if detect_fire_by_raspi(stream,fire_detected,alert_timer,fire_cascade):
                 print("fire detected and save.")
             else:
-                camera.capture('/home/pi/Desktop/Test/image' + str(i) + '.jpg')
+                timestamp = time.time()
+                camera.capture('/home/pi/Desktop/Test/image' + str(timestamp) + '.jpg')
                 print("No fire detected." , i)             
             time.sleep(1)
             i = i + 1
